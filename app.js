@@ -4,7 +4,8 @@ const fs = require("fs")
 http.createServer(function(request, response){
 
 console.log(`Запрошенный адрес: ${request.url}`)
-const file = request.url.substr(1)
+const file = request.url.substr(1) // я удалил код и создал 5 сервера на разных чистоте
+// 2 для отправки 2 для получения и один для использование шаблона
 fs.access(file, fs.constants.R_OK, err => {
 if(err){
   response.statusCode = 404
